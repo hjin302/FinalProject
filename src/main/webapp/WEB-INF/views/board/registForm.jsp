@@ -60,7 +60,7 @@ $(function(){
 	
 	//목록버튼 
 	$($("input[type='button']")[1]).click(function(){
-		location.href="/reboard/list.jsp";
+		location.href="/board/list";
 	});
 
 });

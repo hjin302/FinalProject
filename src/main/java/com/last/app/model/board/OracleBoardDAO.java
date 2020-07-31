@@ -30,7 +30,7 @@ public class OracleBoardDAO implements BoardDAO{
 	@Override
 	public void insert(Board board) throws DMLException{
 		int result=sessionTemplate.insert("OracleBoard.insert", board);
-		result=0;
+
 		if(result==0) {
 			throw new DMLException("등록되지 않았습니다");
 		}

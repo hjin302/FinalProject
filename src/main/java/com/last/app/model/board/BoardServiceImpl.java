@@ -16,7 +16,7 @@ public class BoardServiceImpl implements BoardService{
 	//중복된 자료형이 두개이상 발견되면, 개발자가 어떤 객체를 사용할지를 명시해야 한다!!
 	//기본적으로 클래스명의 맨 앞자를 소문자로한 아이디를 빈의 기본 아이디로 인식
 	@Inject
-	@Qualifier("oracleBoardDAO")
+	@Qualifier("mysqlBoardDAO")
 	private BoardDAO boardDAO;
 	
 	@Override

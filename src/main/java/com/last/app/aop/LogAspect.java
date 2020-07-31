@@ -13,7 +13,6 @@ public class LogAspect {
 		//타겟의 호출을 중간에서 가로막았으므로, 다시 진행시켜야..
 		Object result=joinPoint.proceed();// go head
 		logger.info("원래 호출하려고 했던 메서드는 ", joinPoint.getSignature());
-		//System.out.println("원래 호출하려했던 메서드 : "+joinPoint.getSignature());
 		
 		return result;
 	}

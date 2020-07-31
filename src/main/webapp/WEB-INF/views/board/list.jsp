@@ -33,7 +33,7 @@ a{text-decoration:none;}
 <script>
 $(function(){
 	$("button").click(function(){
-		location.href="/reboard/registForm.jsp";
+		location.href="/board/registForm";
 	});
 });
 </script>
