@@ -1,4 +1,4 @@
-package com.last.app.controller.rest.board;
+package com.last.app.controller.test.board;
 
 import java.util.List;
 
@@ -19,20 +19,20 @@ import com.last.app.model.board.BoardService;
 
 //@RestController를 선언하면 ,메서드마다 @ResponseBody를 붙이지 않아도 된다
 @RestController
-public class RestBoardController {
-	private static Logger logger=LoggerFactory.getLogger(RestBoardController.class);
+public class TestBoardController {
+	private static Logger logger=LoggerFactory.getLogger(TestBoardController.class);
 	
 	@Inject
 	private BoardService boardService;
 	
-	@RequestMapping(value="/rest/board", method=RequestMethod.GET,produces ="text/json;charset=UTF-8")
+	@RequestMapping(value="/test/board", method=RequestMethod.GET,produces ="text/json;charset=UTF-8")
 	public List<Board> getList(){
 		logger.info("RestBoardController 호출함");
 		return boardService.selectAll();
 	} 
 	
 	//한건 가져오기 
-	@RequestMapping(value="/rest/board/{board_id}", method=RequestMethod.GET)
+	@RequestMapping(value="/test/board/{board_id}", method=RequestMethod.GET)
 	public Board select(@PathVariable int board_id) {
 		logger.info("board_id="+board_id);
 		Board board = boardService.select(board_id);
@@ -40,7 +40,7 @@ public class RestBoardController {
 	}
 	
 	//한건 등록하기 
-	@RequestMapping(value="/rest/board", method=RequestMethod.POST,produces ="text/json;charset=UTF-8" )
+	@RequestMapping(value="/test/board", method=RequestMethod.POST,produces ="text/json;charset=UTF-8" )
 	public void regist(Board board) {
 		throw new DMLException("에러네용");
 		//return "1";

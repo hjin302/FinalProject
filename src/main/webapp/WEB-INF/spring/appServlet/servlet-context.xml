@@ -24,7 +24,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.last.app.controller" />
+	<context:component-scan base-package="com.last.app.controller">
+		<context:exclude-filter type="annotation" expression="com.last.app.controller.rest.*Controller"/>
+	</context:component-scan>
 	
 	<!-- aop -->
 
